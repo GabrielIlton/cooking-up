@@ -1,42 +1,42 @@
 <script lang="ts">
-    import type ICategorie from '../interfaces/ICategorie';
-    import CardCategorie from './CardCategorie.vue';
-    import { getCategories } from '../http';
+import type ICategorie from '../interfaces/ICategorie';
+import CardCategorie from './CardCategorie.vue';
+import { getCategories } from '../http';
 
-    export default {
-        data() {
-            return {
-                categorias: [] as ICategorie[]
-            }
-        },
-
-        async created() {
-            this.categorias = await getCategories()
-        },
-        components: { CardCategorie }
+export default {
+  data() {
+    return {
+      categorias: [] as ICategorie[]
     }
+  },
+
+  async created() {
+    this.categorias = await getCategories()
+  },
+  components: { CardCategorie }
+}
 </script>
 
 <template>
-    <section class="selecionar-ingredientes">
-        <h1 class="cabecalho titulo-ingredientes"> 
-            Ingredientes
-        </h1>
-        
-        <p class="paragrafo-lg instrucoes">
-            Selecione abaixo os ingredientes que você deseja usar nessa receita!
-        </p>
+  <section class="selecionar-ingredientes">
+    <h1 class="cabecalho titulo-ingredientes">
+      Ingredientes
+    </h1>
 
-        <ul class="categorias">
-            <li v-for="categoria in categorias">
-                <CardCategorie :categoria="categoria"/>
-            </li>
-        </ul>
+    <p class="paragrafo-lg instrucoes">
+      Selecione abaixo os ingredientes que você deseja usar nessa receita!
+    </p>
 
-        <p class="paragrafo dica">
-            *Atenção: consideramos que você tenha em casa sal, pimenta e água.
-        </p>
-    </section>
+    <ul class="categorias">
+      <li v-for="categoria in categorias">
+        <CardCategorie :categoria="categoria" />
+      </li>
+    </ul>
+
+    <p class="paragrafo dica">
+      *Atenção: consideramos que você tenha em casa sal, pimenta e água.
+    </p>
+  </section>
 </template>
 
 <style scoped>

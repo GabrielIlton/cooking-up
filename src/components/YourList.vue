@@ -1,30 +1,30 @@
 <script lang="ts">
 import { PropType } from 'vue';
 
-    export default {
-			props: {
-				listIngredients: { type: Array as PropType<string[]>, required: true },
-      }
-    }
+export default {
+  props: {
+    listIngredients: { type: Array as PropType<string[]>, required: true },
+  }
+}
 </script>
 
 <template>
- <section >
+  <section>
     <span class="subtitulo-lg sua-lista-texto">
-        Sua lista:
+      Sua lista:
     </span>
-    
+
     <ul v-if="listIngredients.length" class="ingredientes-sua-lista">
-        <li v-for="ingrediente in listIngredients" :key="ingrediente" class="ingrediente">
-            <Tag :texto="ingrediente" is_active/>
-        </li>
+      <li v-for="ingrediente in listIngredients" :key="ingrediente" class="ingrediente">
+        <Tag :texto="ingrediente" is_active />
+      </li>
     </ul>
 
     <p v-else class="paragrafo lista-vazia">
-        <img src="../assets/images/icones/lista-vazia.svg" alt="Ícone de pesquisa">
-        Sua lista está vazia, selecione ingredientes para iniciar. 
+      <img src="../assets/images/icones/lista-vazia.svg" alt="Ícone de pesquisa">
+      Sua lista está vazia, selecione ingredientes para iniciar.
     </p>
-	</section>
+  </section>
 </template>
 
 <style scoped>

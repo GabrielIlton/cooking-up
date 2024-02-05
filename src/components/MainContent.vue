@@ -1,24 +1,24 @@
 <script lang="ts">
-  import SelectIngredient from './SelectIngredient.vue';
-  import YourList from './YourList.vue';
-  import Tag from './Tag.vue';
+import SelectIngredient from './SelectIngredient.vue';
+import YourList from './YourList.vue';
+import Tag from './Tag.vue';
 
-  export default {
+export default {
   data() {
-      return {
-          ingredientes: ['Alho', 'Manteiga', 'Orégano'] as string[]
-      };
-    },
-    components: { SelectIngredient, Tag, YourList }
-  }
+    return {
+      ingredientes: ['Alho', 'Manteiga', 'Orégano'] as string[]
+    };
+  },
+  components: { SelectIngredient, Tag, YourList }
+}
 </script>
 
 <template>
-    <main class="conteudo-principal">
-      <YourList :listIngredients="ingredientes" /> 
-        
-      <SelectIngredient />
-    </main>
+  <main class="conteudo-principal">
+    <YourList :listIngredients="ingredientes" />
+
+    <SelectIngredient />
+  </main>
 </template>
 
 <style scoped>
@@ -47,5 +47,4 @@
     gap: 4rem;
   }
 }
-
 </style>

@@ -1,8 +1,8 @@
 <template>
-      <header class="banner">
+  <header class="banner">
     <div class="apresentacao">
       <img src="../assets/images/logo.svg" alt="Logo do Cooking' Up" class="logo">
-    
+
       <p class="cabecalho-lg frase-cabecalho">
         <span class="texto-verde">Um banquete de ideias para</span>
         despertar o chef que há em você!
