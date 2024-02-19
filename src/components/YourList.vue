@@ -1,10 +1,12 @@
 <script lang="ts">
 import { PropType } from 'vue';
+import Tag from './Tag.vue';
 
 export default {
   props: {
     listIngredients: { type: Array as PropType<string[]>, required: true },
-  }
+  },
+  components: { Tag }
 }
 </script>
 
@@ -15,8 +17,8 @@ export default {
     </span>
 
     <ul v-if="listIngredients.length" class="ingredientes-sua-lista">
-      <li v-for="ingrediente in listIngredients" :key="ingrediente" class="ingrediente">
-        <Tag :texto="ingrediente" is_active />
+      <li v-for="ingredient in listIngredients" :key="ingredient" class="ingrediente">
+        <Tag :texto="ingredient" is_active />
       </li>
     </ul>
 

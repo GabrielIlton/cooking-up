@@ -8,12 +8,21 @@ export default {
 	},
 	data() {
 		return { selecionado: false }
-	}
+	},
+	methods: {
+		toClick() {
+			this.selecionado = !this.selecionado
+
+			if (this.selecionado) this.$emit('addIngredient', this.ingrediente);
+			else this.$emit('removeIngredient', this.ingrediente)
+		}
+	},
+	emits: ['addIngredient', 'removeIngredient']
 }
 </script>
 
 <template>
-	<button class="ingrediente" @click="selecionado = !selecionado" :aria-pressed="selecionado">
+	<button class="ingrediente" @click="toClick" :aria-pressed="selecionado">
 		<Tag :texto="ingrediente" :is_active="selecionado" />
 	</button>
 </template>
